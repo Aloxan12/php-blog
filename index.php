@@ -1,24 +1,25 @@
 <?php
 
-$connection = mysqli_connect('localhost', 'root', '', 'blog-db');
-
-if($connection == false)
-{
-    echo 'Не удалось подключиться к базе данных';
-    echo mysqli_connect_error();
-    die();
-}
+include('db.php');
 
 $result = mysqli_query($connection, 'SELECT * FROM `acticles_categories`');
 ?>
+
+<form method="POST" action="/handle.php">
+    <input type="text" placeholder="Ваш логин" name="login">
+    <input type="text" placeholder="Ваш пароль" name="password">
+    <hr>
+    <input type="button" value="Отправить">
+</form>
+
 <ul>
     <?php
         while (($cat = mysqli_fetch_assoc($result)) )
         {
-            echo '<li>' . $cat['title'] . '</li>';
+            $article_count = mysqli_query($connection, "SELECT COUNT(`id`) AS `total_count` FROM `acticles` WHERE `categories_id` =" . $cat['id']);
+            $article_count_result = mysqli_fetch_assoc($article_count);
+            echo '<li>' . $cat['title'] . ' ('. $article_count_result['total_count']. ')</li>';
         }
     ?>
 </ul>
-<?php
-    mysqli_close($connection);
-?>
+
