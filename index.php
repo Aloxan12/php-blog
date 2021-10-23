@@ -1,25 +1,33 @@
 <?php
-
-include('db.php');
-
-$result = mysqli_query($connection, 'SELECT * FROM `acticles_categories`');
+    require "includes/config.php";
 ?>
-
-<form method="POST" action="/handle.php">
-    <input type="text" placeholder="Ваш логин" name="login">
-    <input type="text" placeholder="Ваш пароль" name="password">
-    <hr>
-    <input type="button" value="Отправить">
-</form>
-
-<ul>
-    <?php
-        while (($cat = mysqli_fetch_assoc($result)) )
-        {
-            $article_count = mysqli_query($connection, "SELECT COUNT(`id`) AS `total_count` FROM `acticles` WHERE `categories_id` =" . $cat['id']);
-            $article_count_result = mysqli_fetch_assoc($article_count);
-            echo '<li>' . $cat['title'] . ' ('. $article_count_result['total_count']. ')</li>';
-        }
-    ?>
-</ul>
-
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><?php echo $config['title']?></title>
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header_top">
+                <div class="container">
+                    <div class="header_top_logo">
+                        <h1><?php echo $config['title']?></h1>
+                    </div>
+                    <nav class="header_top_menu">
+                        <ul>
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">Обо мне</a></li>
+                            <li><a href="#">Я вконтакте</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>
