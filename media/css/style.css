@@ -2,15 +2,16 @@
     text-decoration: none;
     list-style: none;
     letter-spacing: 1px;
+    font-family: Arial;
 }
 
 .header_top{
-    font-family: Arial;
+
 }
 .container{
-    width: 80%;
-    margin: auto;
     display: flex;
+    width: 70%;
+    margin: auto;
     justify-content: space-between;
     align-items: center;
 }
@@ -20,7 +21,31 @@
 }
 
 .header_top_menu ul li a{
-    color: black;
-    margin-right: 20px;
+    color: #908c8c;
+    margin-right: 30px;
     font-size: 20px;
+}
+.header_top_menu ul li a:hover{
+    color: black;
+    transition: .5s;
+}
+
+.header_bottom{
+    width: 100%;
+    background: black;
+}
+.header_bottom .container nav{
+    width: 100%;
+}
+.header_bottom .container ul{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+}
+.header_bottom .container ul li a{
+    color: #ccc;
+}
+.header_bottom .container ul li a:hover{
+    color: white;
+    transition: .5s;
 }
