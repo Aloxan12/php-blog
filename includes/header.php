@@ -1,12 +1,12 @@
 <?php
-    require "config.php";
+require "config.php";
 ?>
 
 <header id="header">
     <div class="header_top">
         <div class="container">
             <div class="header_top_logo">
-                <h1><?php echo $config['title']?></h1>
+                <h1><?php echo $config['title'] ?></h1>
             </div>
             <nav class="header_top_menu">
                 <ul>
@@ -18,17 +18,21 @@
         </div>
     </div>
 
+    <?php
+    $categories = mysqli_query($connection, "SELECT * FROM `acticles_categories`")
+    ?>
     <div class="header_bottom">
         <div class="container">
             <nav>
                 <ul>
-                    <li><a href="#">Безопасность</a></li>
-                    <li><a href="#">Программирование</a></li>
-                    <li><a href="#">Образ жизни</a></li>
-                    <li><a href="#">Музыка</a></li>
-                    <li><a href="#">Саморазвитие</a></li>
-                    <li><a href="#">Гайды</a></li>
-                    <li><a href="#">Обзоры</a></li>
+                    <?php
+                       while ($cat = mysqli_fetch_assoc($categories))
+                       {
+                        ?>
+                        <li><a href="/categorie.php?id=<?php echo $cat['id']; ?>"><?php echo $cat['title'] ?></a></li>
+                        <?php
+                       }
+                    ?>
                 </ul>
             </nav>
         </div>

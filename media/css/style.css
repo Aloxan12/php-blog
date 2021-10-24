@@ -3,6 +3,7 @@
     list-style: none;
     letter-spacing: 1px;
     font-family: Arial;
+    margin: 0;
 }
 
 .header_top{
@@ -11,7 +12,8 @@
 .container{
     display: flex;
     width: 70%;
-    margin: auto;
+    margin: 15px auto;
+    padding: 12px;
     justify-content: space-between;
     align-items: center;
 }
@@ -21,13 +23,13 @@
 }
 
 .header_top_menu ul li a{
-    color: #908c8c;
+    color: black;
     margin-right: 30px;
     font-size: 20px;
+    padding-bottom: 5px;
 }
 .header_top_menu ul li a:hover{
-    color: black;
-    transition: .5s;
+    border-bottom: 2px solid black;
 }
 
 .header_bottom{
@@ -43,6 +45,7 @@
     padding-left: 0;
 }
 .header_bottom .container ul li a{
+    text-transform: capitalize;
     color: #ccc;
 }
 .header_bottom .container ul li a:hover{
