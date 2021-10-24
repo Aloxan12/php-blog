@@ -1,0 +1,26 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    letter-spacing: 1px;
+}
+
+.header_top{
+    font-family: Arial;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_top_menu ul{
+    display: flex;
+}
+
+.header_top_menu ul li a{
+    color: black;
+    margin-right: 20px;
+    font-size: 20px;
+}
