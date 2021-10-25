@@ -19,17 +19,22 @@ require "config.php";
     </div>
 
     <?php
-    $categories = mysqli_query($connection, "SELECT * FROM `acticles_categories`")
+    $categories_q = mysqli_query($connection, "SELECT * FROM `acticles_categories`");
+    $categories = array();
+    while ( $cat = mysqli_fetch_assoc($categories_q))
+    {
+        $categories[] = $cat;
+    }
     ?>
     <div class="header_bottom">
         <div class="container">
             <nav>
                 <ul>
                     <?php
-                       while ($cat = mysqli_fetch_assoc($categories))
+                       foreach ($categories as $cat)
                        {
                         ?>
-                        <li><a href="/categorie.php?id=<?php echo $cat['id']; ?>"><?php echo $cat['title'] ?></a></li>
+                        <li><a href="/categorie.php?id=<?php echo $cat['id']; ?>"><?php echo $cat['title']; ?></a></li>
                         <?php
                        }
                     ?>
