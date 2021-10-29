@@ -34,7 +34,7 @@ require "config.php";
                        foreach ($categories as $cat)
                        {
                         ?>
-                        <li><a href="/categorie.php?id=<?php echo $cat['id']; ?>"><?php echo $cat['title']; ?></a></li>
+                        <li><a href="/articles.php?id=<?php echo $cat['id']; ?>"><?php echo $cat['title']; ?></a></li>
                         <?php
                        }
                     ?>

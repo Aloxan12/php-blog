@@ -20,13 +20,14 @@ require "includes/config.php";
             <div class="row">
                 <section class="content_left col-md-8">
                     <div class="block">
-                        <a href="#">Все записи</a>
-                        <h3>Ноавйшее в блоге</h3>
+                        <a href="articles.php">Все записи</a>
+                        <h3>Новейшее в блоге</h3>
                         <div class="block_content">
                             <div class="articles articles_horizontal">
 
                                 <?php
-                                $articles = mysqli_query($connection, "SELECT * FROM `acticles`")
+                                $articles = mysqli_query($connection, "SELECT * FROM `acticles` 
+                                    ORDER BY `id` DESC LIMIT 10")
                                 ?>
 
                                 <?php
@@ -38,7 +39,7 @@ require "includes/config.php";
                                     /static/images/<?php echo $art['image']; ?>);">
                                      </div>
                                      <div class="article_info">
-                                         <a href="/article.php?id=<?php echo $art['id'];?>"><?php  echo  
+                                         <a href="/article.php?id=<?php echo $art['id'];?>"><?php  echo
                                              $art['title']; ?></a>
                                          <div class="article_info_meta">
                                              <?php
@@ -52,7 +53,7 @@ require "includes/config.php";
                                                     }
                                                 }
                                              ?>
-                                             <small>Категория: <a href="#"><?php echo $art_cat['title']; ?></a></small>
+                                             <small>Категория: <a href="articles.php?categorie=<?php echo $art_cat['id'];?>"><?php echo $art_cat['title']; ?></a></small>
                                          </div>
                                          <div class="article_info_preview"><?php echo mb_substr($art['text'],
                                                  0, 50,'utf-8');  ?></div>
