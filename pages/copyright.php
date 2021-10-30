@@ -14,22 +14,7 @@ require "../includes/config.php";
 <body>
 <div id="wrapper">
     <?php include "../includes/header.php"; ?>
-    <div id="content">
-        <div class="container">
-            <div class="row">
-                <section class="content_left col-md-8">
-                    <div class="block">
-                        <h3>Обо мне</h3>
-                        <div class="block_content">
-                            <div class="full-text">
-                                <h1>Обо мне</h1>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
+    Текст о копирайте
     <?php include "../includes/footer.php"; ?>
 </div>
 </body>
