@@ -78,7 +78,7 @@
 
 .articles{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -164,7 +164,6 @@
 
 .footer{
     display: flex;
-    background: black;
 }
 
 .footer_menu ul li a{
@@ -176,3 +175,37 @@
 .footer_menu ul li a:hover{
     border-bottom: 2px solid black;
 }
+
+
+
+
+.form .form_group {
+    margin-bottom: 20px;
+}
+.form .form_group:last-child {
+    margin-bottom: 0;
+}
+
+.form .form_control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.form textarea.form_control {
+    min-height: 100px;
+}
+
+.form input[type="submit"].form_control {
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+    width: 250px;
+    opacity: 0.7;
+}
+.form input[type="submit"].form_control:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
