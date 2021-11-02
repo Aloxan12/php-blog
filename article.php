@@ -114,6 +114,11 @@ require "includes/config.php";
                                             if (empty($errors))
                                             {
                                                 //Ваш коммент
+                                                mysqli_query($connection, "INSERT INTO `comments` (
+                                                `author`, `nickname`, `email`, `text`,`pubdate`, `articles_id`)
+                                                VALUES ('".$_POST['name']."', '".$_POST['nickname']."', '".$_POST['email']."',
+                                                '".$_POST['text']."', NOW(), '". $art['id']."')");
+
                                                 echo '<span style="color: green; font-weight: bold; margin-bottom: 10px; display: block">Комментарий успешно добавлен</span>';
                                             }else
                                             {
